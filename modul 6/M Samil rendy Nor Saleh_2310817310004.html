@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPhotography</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .nav-link {
+            color: #000;
+            font-size: 1.1rem;
+        }
+
+        .btn-group .btn {
+            margin: 5px;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e7e7e7;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer .social-links a {
+            color: #333;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+
+        footer .social-links a:hover {
+            color: #007bff;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .biodata table {
+            margin-top: 20px;
+        }
+
+        .biodata th, .biodata td {
+            padding: 5px 10px;
+        }
+
+        .biodata th {
+            text-align: right;
+        }
+
+        .biodata td {
+            text-align: left;
+        }
+
+        .portfolio-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .portfolio-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .photo {
+            display: none;
+        }
+
+        .photo.portrait,
+        .photo.landscape,
+        .photo.all {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="display-4">SamilRendy</h1>
+        <nav class="nav justify-content-end">
+            <a class="nav-link" href="#" onclick="showContent('home')">Home</a>
+            <a class="nav-link" href="#" onclick="showContent('about')">About Me</a>
+            <a class="nav-link" href="#" onclick="showContent('portfolio')">Portfolio</a>
+            <a class="nav-link" href="#" onclick="showContent('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <div id="home" class="content active">
+        <section class="text-center py-5">
+            <h2>Hi. Hello.. I Am Samil...!</h2>
+            <p class="lead">aku adalah seorang mahasiswa TI di Universitas Lambung Mangkurat</p>
+            <div class="btn-group" role="group" aria-label="Filter Buttons">
+                <button type="button" class="btn btn-secondary" onclick="filterPhotos('all')">All</button>
+                <button type="button" class="btn btn-secondary" onclick="filterPhotos('landscape')">Landscape</button>
+                <button type="button" class="btn btn-secondary" onclick="filterPhotos('portrait')">Portrait</button>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <!-- Images -->
+                <div class="col-lg-3 col-md-4 col-6 mb-4 photo portrait all">
+                    <img src="portrait1.jpg" class="img-fluid" alt="Portrait 1">
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-4 photo portrait all">
+                    <img src="portrait2.jpg" class="img-fluid" alt="Portrait 2">
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-4 photo portrait all">
+                    <img src="portrait3.jpeg" class="img-fluid" alt="Portrait 3">
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-4 photo portrait all">
+                    <img src="portrait.jpg" class="img-fluid" alt="Portrait 4">
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-4 photo landscape all">
+                    <img src="landscape1.jpeg" class="img-fluid" alt="Landscape 1">
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-4 photo landscape all">
+                    <img src="landscape2.jpeg" class="img-fluid" alt="Landscape 2">
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-4 photo landscape all">
+                    <img src="landscape3.jpeg" class="img-fluid" alt="Landscape 3">
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-4 photo landscape all">
+                    <img src="landscape4.jpg" class="img-fluid" alt="Landscape 4">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="about" class="content">
+        <section class="text-center py-5 about-content">
+            <h2>About Me</h2>
+            <img src="portrait.jpg" width="200">
+            <div class="biodata">
+                <table>
+                    <tr>
+                        <th>NIM</th>
+                        <td>2310817310004</td>
+                    </tr>
+                    <tr>
+                        <th>Nama</th>
+                        <td>M. Samil Rendy Nor Saleh</td>
+                    </tr>
+                    <tr>
+                        <th>Tempat, Tanggal Lahir</th>
+                        <td>Kanibungan, 31 Januari 2005</td>
+                    </tr>
+                    <tr>
+                        <th>Alamat</th>
+                        <td>Jl.Sungai Bakung Villa mahantas 3</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <div id="portfolio" class="content">
+        <section class="text-center py-5 portfolio-content">
+            <h2>Portfolio</h2>
+            <p class="lead">ini adalah portofolio ku:</p>
+            <img src="portfolio1.jpg" alt="Portfolio 1">
+        </section>
+    </div>
+
+    <div id="contact" class="content">
+        <section class="text-center py-5">
+            <h2>Contact</h2>
+            <p class="lead">You can reach me at:</p>
+            <p>Email: johndas@example.com</p>
+            <p>Phone: +123456789</p>
+        </section>
+    </div>
+
+    <footer class="text-center py-4">
+        <p>&copy; Copyright 2024. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showContent(id) {
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+
+        function filterPhotos(category) {
+            var photos = document.querySelectorAll('.photo');
+            photos.forEach(function(photo) {
+                photo.style.display = 'none';
+                if (photo.classList.contains(category) || category === 'all') {
+                    photo.style.display = 'block';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
